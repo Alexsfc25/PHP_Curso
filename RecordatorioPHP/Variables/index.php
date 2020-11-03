@@ -12,8 +12,12 @@ echo var_dump($variablearreglo);
 define('cons', 'Definición de Constantes');
 echo cons . "<br>";
 //Constantes Predefinidas
-echo "Constante de SO ".PHP_OS;
-echo '<br/>Constante de version de PHP'.PHP_VERSION;
-echo '<br/>Linea en la que se esta  '.__LINE__;
+echo "Constante de SO " . PHP_OS;
+echo '<br/>Constante de version de PHP' . PHP_VERSION;
+echo '<br/>Linea en la que se esta  ' . __LINE__;
+
+function HolaMundo() {
+    echo __FUNCTION__;
+}
 ?>
 
