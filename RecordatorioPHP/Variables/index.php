@@ -15,6 +15,12 @@ echo cons . "<br>";
 echo "Constante de SO " . PHP_OS;
 echo '<br/>Constante de version de PHP' . PHP_VERSION;
 echo '<br/>Linea en la que se esta  ' . __LINE__;
+$vara = 5;
+$sum = 2;
+$vara -= $sum;
+echo '<br>+=' . $vara . "<br>";
+$vara = + $sum;
+echo '=+' . $vara;
 
 function HolaMundo() {
     echo __FUNCTION__;
