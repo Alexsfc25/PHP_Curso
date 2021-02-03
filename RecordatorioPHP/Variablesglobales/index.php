@@ -1,6 +1,6 @@
 <?php
 
-//variables super globlales 
+//variables super globales 
 //variables de servidor
 /** @var type $_SERVER */
 $method = filter_input(INPUT_SERVER, 'SERVER_ADDR');
