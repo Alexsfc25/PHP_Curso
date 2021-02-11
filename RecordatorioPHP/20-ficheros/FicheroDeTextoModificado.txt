@@ -1,0 +1,8 @@
+Información del fichero de texto,
+Hola!, ¿Como estas?,
+No se que poner en este archivo xD
+****Escribiendo en el archivo con función fwrite****
+****Escribiendo en el archivo con función fwrite****
+****Escribiendo en el archivo con función fwrite****
+****Escribiendo en el archivo con función fwrite****
+****Escribiendo en el archivo con función fwrite****
