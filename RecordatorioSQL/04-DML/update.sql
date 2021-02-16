@@ -1,0 +1,8 @@
+#Modificar filas#
+UPDATE USUARIOS
+SET FECHA = CURDATE()
+WHERE ID = 3;
+UPDATE USUARIOS
+SET FECHA = CURDATE(),
+    password = 12345
+WHERE ID = 3;
