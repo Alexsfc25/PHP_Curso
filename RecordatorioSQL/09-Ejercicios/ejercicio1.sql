@@ -50,7 +50,223 @@ CREATE TABLE encargos(
 ) ENGINE = INNODB;
 -- Rellenar la base de datos con información
 --Coches 
+INSERT INTO coches
+VALUES(NULL, 'Renault Clio', 'Renault', 120000, 13);
+INSERT INTO coches
+VALUES(NULL, 'Seat Panda', 'Seat', 100000, 15);
+INSERT INTO coches
+VALUES(
+        NULL,
+        'Mercedes Ranchera',
+        'Mercedes Benz',
+        420000,
+        8
+    );
+INSERT INTO coches
+VALUES(NULL, 'Porche Cayene', 'Porche', 500000, 18);
+INSERT INTO coches
+VALUES(
+        NULL,
+        'Lamborghini Aventador',
+        'Lamborghini',
+        1500000,
+        7
+    );
+INSERT INTO coches
+VALUES(NULL, 'Ferrari Spider', 'Ferrari', 2000000, 3);
 --Grupos
+INSERT INTO grupos
+VALUES(NULL, 'Vendedores A', 'CDMX');
+INSERT INTO grupos
+VALUES(NULL, 'Vendedores B', 'CDMX');
+INSERT INTO grupos
+VALUES(NULL, 'Directores Mecánicos', 'Monterrey');
+INSERT INTO grupos
+VALUES(NULL, 'Vendedores A', 'Guadalajara');
+INSERT INTO grupos
+VALUES(NULL, 'Vendedores B', 'Guadalajara');
+INSERT INTO grupos
+VALUES(NULL, 'Vendedores C', 'Puebla');
+INSERT INTO grupos
+VALUES(NULL, 'Vendedores A', 'Colima');
+INSERT INTO grupos
+VALUES(NULL, 'Vendedores B', 'Pachuca');
+INSERT INTO grupos
+VALUES(NULL, 'Vendedores C', 'Yucatan');
 --Vendedores
+INSERT INTO VENDEDORES
+VALUES(
+        NULL,
+        1,
+        null,
+        'Ernesto',
+        'López',
+        'Responsable de Tienda',
+        CURDATE(),
+        50000,
+        4
+    );
+INSERT INTO VENDEDORES
+VALUES(
+        NULL,
+        1,
+        1,
+        'Pedro',
+        'Ramirez',
+        'Ayudante en Tienda',
+        CURDATE(),
+        20000,
+        2
+    );
+INSERT INTO VENDEDORES
+VALUES(
+        NULL,
+        2,
+        null,
+        'Brandon',
+        'Sánchez',
+        'Responsable de Tienda',
+        CURDATE(),
+        50000,
+        4
+    );
+INSERT INTO VENDEDORES
+VALUES(
+        NULL,
+        2,
+        3,
+        'Mariana',
+        'Gómez',
+        'Ayudante en Tienda',
+        CURDATE(),
+        23000,
+        2
+    );
+INSERT INTO VENDEDORES
+VALUES(
+        NULL,
+        3,
+        null,
+        'Raul',
+        'Martinez',
+        'Mecánico Jefe',
+        CURDATE(),
+        70000,
+        3
+    );
+INSERT INTO VENDEDORES
+VALUES(
+        NULL,
+        4,
+        null,
+        'Antonio',
+        'Morales',
+        'Vendedor de recambios',
+        CURDATE(),
+        25000,
+        10
+    );
+INSERT INTO VENDEDORES
+VALUES(
+        NULL,
+        5,
+        null,
+        'Fernanda',
+        'Aguilar',
+        'Vendedor Experto',
+        CURDATE(),
+        26000,
+        20
+    );
+INSERT INTO VENDEDORES
+VALUES(
+        NULL,
+        6,
+        null,
+        'Gladis',
+        'Jimenez',
+        'Ejecutivo de Cuentas',
+        CURDATE(),
+        50000,
+        6
+    );
+INSERT INTO VENDEDORES
+VALUES(
+        NULL,
+        6,
+        8,
+        'Mario',
+        'Lara',
+        'Ayudante en Tienda',
+        CURDATE(),
+        18000,
+        6
+    );
 --Clientes
---Encargos
+INSERT INTO clientes
+VALUES(
+        NULL,
+        1,
+        'Construcciones Díaz INC.',
+        'GAM',
+        120000 * 3,
+        CURDATE()
+    );
+INSERT INTO clientes
+VALUES(
+        NULL,
+        1,
+        'Fruteria Anita',
+        'Azcapotzalco',
+        100000 * 4,
+        CURDATE()
+    );
+INSERT INTO clientes
+VALUES(
+        NULL,
+        1,
+        'Imprenta Ramirez',
+        'Iztacalco',
+        420000,
+        CURDATE()
+    );
+INSERT INTO clientes
+VALUES(
+        NULL,
+        1,
+        'Colchones Inc',
+        'Tlalpan',
+        420000 * 3,
+        CURDATE()
+    );
+INSERT INTO clientes
+VALUES(
+        NULL,
+        1,
+        'Bar Doberman',
+        'GAM',
+        1500000,
+        CURDATE()
+    );
+INSERT INTO clientes
+VALUES(
+        NULL,
+        1,
+        'PC Mexico',
+        'Coyoacán',
+        2000000,
+        CURDATE()
+    );
+#Encargos
+INSERT INTO encargos
+VALUES(NULL, 1, 1, 2, CURDATE());
+INSERT INTO encargos
+VALUES(NULL, 2, 2, 4, CURDATE());
+INSERT INTO encargos
+VALUES(NULL, 3, 3, 1, CURDATE());
+INSERT INTO encargos
+VALUES(NULL, 4, 3, 3, CURDATE());
+INSERT INTO encargos
+VALUES(NULL, 5, 5, 1, CURDATE());
+INSERT INTO encargos
+VALUES(NULL, 6, 6, 1, CURDATE());
