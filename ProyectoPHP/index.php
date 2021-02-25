@@ -32,6 +32,7 @@
                 <li><a href="index.php">Contacto</a></li>
             </ul>
         </nav>
+        <!-- <div class="clearfix"></div> -->
     </header>
     <div id="contenedor">
         <!-- Sidebar -->
