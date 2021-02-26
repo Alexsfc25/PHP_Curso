@@ -68,31 +68,46 @@
                 Últimas Entradas
             </h2>
             <article class="entrada">
-                <h3>Titulo de la entrada</h3>
+                <h3>
+                    <a href="#">
+                        Titulo de la entrada
+                    </a>
+                </h3>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec urna tortor, scelerisque eget facilisis id, condimentum vel sapien. Pellentesque non molestie sem, gravida iaculis leo. Duis tortor neque, mattis eget sem id, ultricies semper tortor. Etiam dapibus sagittis turpis eget ullamcorper. Sed malesuada pretium lectus, auctor vestibulum nisl condimentum quis. In efficitur ipsum in est malesuada rutrum. Mauris eleifend leo sed nulla pellentesque, nec venenatis ex egestas. Cras quis mollis lacus. Aliquam erat volutpat. Nam tincidunt augue vel arcu lacinia, non viverra libero fermentum. Proin mollis pharetra quam quis euismod. Maecenas ac tellus nec nisi efficitur tempor quis et urna. In hac habitasse platea dictumst.
                 </p>
             </article>
             <article class="entrada">
-                <h3>Titulo de la entrada</h3>
+                <h3>
+                    <a href="#">
+                        Titulo de la entrada
+                    </a>
+                </h3>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec urna tortor, scelerisque eget facilisis id, condimentum vel sapien. Pellentesque non molestie sem, gravida iaculis leo. Duis tortor neque, mattis eget sem id, ultricies semper tortor. Etiam dapibus sagittis turpis eget ullamcorper. Sed malesuada pretium lectus, auctor vestibulum nisl condimentum quis. In efficitur ipsum in est malesuada rutrum. Mauris eleifend leo sed nulla pellentesque, nec venenatis ex egestas. Cras quis mollis lacus. Aliquam erat volutpat. Nam tincidunt augue vel arcu lacinia, non viverra libero fermentum. Proin mollis pharetra quam quis euismod. Maecenas ac tellus nec nisi efficitur tempor quis et urna. In hac habitasse platea dictumst.
                 </p>
             </article>
             <article class="entrada">
-                <h3>Titulo de la entrada</h3>
+                <h3>
+                    <a href="#">
+                        Titulo de la entrada
+                    </a>
+                </h3>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec urna tortor, scelerisque eget facilisis id, condimentum vel sapien. Pellentesque non molestie sem, gravida iaculis leo. Duis tortor neque, mattis eget sem id, ultricies semper tortor. Etiam dapibus sagittis turpis eget ullamcorper. Sed malesuada pretium lectus, auctor vestibulum nisl condimentum quis. In efficitur ipsum in est malesuada rutrum. Mauris eleifend leo sed nulla pellentesque, nec venenatis ex egestas. Cras quis mollis lacus. Aliquam erat volutpat. Nam tincidunt augue vel arcu lacinia, non viverra libero fermentum. Proin mollis pharetra quam quis euismod. Maecenas ac tellus nec nisi efficitur tempor quis et urna. In hac habitasse platea dictumst.
                 </p>
             </article>
+            <div id="ver-todas">
+                <a href="http://">Ver todas las entradas</a>
+            </div>
         </div>
 
     </div>
-    <!-- Pie de Página -->
     <footer id="pie">
         <p>Desarrollado por Alejandro Muñoz &copy; 2021</p>
         <a href='https://pngtree.com/so/seamless'>seamless png from pngtree.com</a>
     </footer>
+    <!-- Pie de Página -->
 </body>
 
 </html>

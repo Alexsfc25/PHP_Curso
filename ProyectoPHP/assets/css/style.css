@@ -15,6 +15,11 @@
   clear: both;
   float: none;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 body::after {
   content: "";
   background: url(../img/—Pngtree—memphis\ 90s\ fashion\ seamless\ pattern_3704520.png)
@@ -43,14 +48,13 @@ body::after {
 /* LOGO */
 #logo {
   width: 100%;
-  height: 100px;
-  /* margin-bottom: 10px; */
+  height: auto;
   margin-left: 10px;
   font-family: "fajala";
   line-height: 100px;
 }
 #logo a {
-  display: inline-block;
+  display: flex;
   font-size: 35px;
   letter-spacing: 2px;
   color: #ffffff;
@@ -67,10 +71,10 @@ body::after {
   flex-grow: 1;
   width: 100%;
   height: 45px;
-  background: linear-gradient(to bottom, #ffffff 0px, #dadada 100%);
-  border: 1px solid #c9c9c9;
+  background: linear-gradient(to bottom, #8000ff 0px, #3a3a3a 100%);
+  border: 1px solid #7100f9;
   border-radius: 10px;
-  box-shadow: 0 1px 1px #c9c9c9;
+  /* box-shadow: 0 1px 1px #fff; */
   overflow: hidden;
 }
 #menu ul {
@@ -92,13 +96,69 @@ body::after {
   border-right: 0;
 }
 #menu ul li a:hover {
-  background: linear-gradient(to bottom, #e5e5e5 0px, #dad9d4 100%);
+  /* background: linear-gradient(to bottom, #9700ff 0px, #4d4d4d 100%); */
+  background: linear-gradient(to bottom, #8000ff 0px, #686868 100%);
 }
 #menu ul li a {
   display: block;
   margin: 0 auto;
   text-align: center;
-  color: #999;
+  color: white;
+}
+/* BARRA LATERAL */
+#sidebar {
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  /* height: auto; */
+}
+.bloque {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: min-content;
+  background: linear-gradient(to bottom, #ffffff 0px, #dadada 100%);
+  box-shadow: 0 0 1px black, 0 3px 7px black, 0 0 1px black inset,
+    0 -3px 2px black inset;
+  padding: 20px 15px 20px 15px;
+}
+.bloque:first-child {
+  margin-bottom: 25px;
+}
+.bloque form {
+  display: flex;
+  flex-direction: column;
+}
+.bloque label,
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  margin: 5px 0 5px 0;
+  flex-basis: 100%;
+}
+.bloque input[type="text"],
+input[type="password"],
+input[type="email"] {
+  margin-bottom: 10px;
+  padding: 7px;
+}
+.bloque input[type="submit"],
+input[type="button"] {
+  background: #6b1abb;
+  color: white;
+  width: 100px;
+  margin: 0px auto;
+  padding: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.bloque h3 {
+  flex-basis: 100%;
+  margin-bottom: 5px;
 }
 /* CONTENEDOR */
 
@@ -108,20 +168,23 @@ body::after {
   justify-content: space-between;
   flex-direction: row-reverse;
   padding-top: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
   width: 80%;
-  min-height: 700px;
-}
-#sidebar {
-  flex-basis: 25%;
+  /* height: auto; */
 }
 #principal {
+  display: flex;
+  flex-direction: column;
   flex-basis: 70%;
   background: linear-gradient(to bottom, #ffffff 0px, #dadada 100%);
   border-radius: 5px;
   box-shadow: 0 0 5px #ccc;
   padding: 20px;
   overflow: hidden;
+  height: max-content;
+}
+#principal a {
+  color: #333;
 }
 #principal h2 {
   font-size: 30px;
@@ -130,6 +193,42 @@ body::after {
   text-shadow: 1px 1px 2px #ccc;
   font-family: "fajala";
 }
+#principal h3 {
+  font-size: 20px;
+  color: #332649;
+  text-shadow: 2px 2px 4px #c4a1ff;
+  letter-spacing: 1px;
+  font-family: "fajala";
+  margin-top: 20px;
+}
 #principal p {
   margin-top: 12px;
+}
+#ver-todas {
+  align-self: center;
+  border-radius: 2px;
+  padding: 15px;
+  background: #6b1abb;
+  font-size: 20px;
+  border: 1px solid;
+  cursor: pointer;
+  margin-top: 20px;
+  /* width: 25%; */
+}
+#ver-todas a {
+  color: white;
+}
+/* PIE DE PÄGINA */
+#pie {
+  /* display: block; */
+  width: 85%;
+  margin: 0 auto;
+  border: 1px solid black;
+  background: linear-gradient(to bottom, #8000ff 0px, #3a3a3a 100%);
+  border-radius: 8px 8px 0 0;
+  color: white;
+  height: auto;
+  padding: 15px;
+  text-align: center;
+  margin-top: auto;
 }
