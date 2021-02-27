@@ -136,6 +136,7 @@ body::after {
 input[type="text"],
 input[type="password"],
 input[type="email"] {
+  font-size: 15px;
   margin: 5px 0 5px 0;
   flex-basis: 100%;
 }
@@ -143,7 +144,7 @@ input[type="email"] {
 input[type="password"],
 input[type="email"] {
   margin-bottom: 10px;
-  padding: 7px;
+  padding: 7px; 
 }
 .bloque input[type="submit"],
 input[type="button"] {
