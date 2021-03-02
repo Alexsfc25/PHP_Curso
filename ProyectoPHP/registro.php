@@ -1,16 +1,14 @@
 <?php
-
-
 if (isset($_POST)) {
     require_once 'includes/conexion.php';
     if (!isset($_SESSION)) {
         session_start();
     }
 
-    $nombre = isset($_POST['nombreR']) ? mysqli_real_escape_string($db, $_POST['nombreR']) : '';
-    $apellidos = isset($_POST['apellidosR']) ? mysqli_real_escape_string($db, $_POST['apellidosR']) : '';
-    $email = isset($_POST['emailR']) ? test_input($_POST['emailR']) : '';
-    $password = isset($_POST['passwordR']) ? test_input($_POST['passwordR']) : '';
+    $nombre = isset($_POST['nombreR']) ? mysqli_real_escape_string($db, test_input($_POST['nombreR'])) : '';
+    $apellidos = isset($_POST['apellidosR']) ? mysqli_real_escape_string($db, test_input($_POST['apellidosR'])) : '';
+    $email = isset($_POST['emailR']) ? mysqli_real_escape_string($db, test_input($_POST['emailR'])) : '';
+    $password = isset($_POST['passwordR']) ? mysqli_real_escape_string($db, test_input($_POST['passwordR'])) : '';
 
     //array de errores
 
