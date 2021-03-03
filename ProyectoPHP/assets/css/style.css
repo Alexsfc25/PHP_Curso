@@ -129,25 +129,32 @@ body::after {
 .bloque:last-child {
   margin-bottom: 0;
 }
-.bloque form {
+form {
   display: flex;
   flex-direction: column;
 }
-.bloque label,
+label,
 input[type="text"],
 input[type="password"],
-input[type="email"] {
-  font-size: 15px;
+input[type="email"],
+select,
+textarea {
+  font-size: 18px;
   margin: 5px 0 5px 0;
   flex-basis: 100%;
 }
-.bloque input[type="text"],
+input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+select,
+textarea {
   margin-bottom: 10px;
   padding: 7px;
 }
-.bloque input[type="submit"],
+.boton {
+  width: 170px !important;
+}
+input[type="submit"],
 input[type="button"],
 .boton {
   background: #6b1abb;
@@ -236,7 +243,7 @@ input[type="button"],
 }
 #ver-todas {
   align-self: center;
-  border-radius: 2px;
+  border-radius: 5px;
   padding: 15px;
   background: #6b1abb;
   font-size: 20px;
@@ -275,4 +282,12 @@ input[type="button"],
 }
 .alerta-exito {
   background-color: green;
+}
+/* Formulario categoria */
+.fcategoria {
+  font-size: 20px;
+}
+.fcategoria label {
+  margin-top: 20px;
+  font-size: 20px;
 }

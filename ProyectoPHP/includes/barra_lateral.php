@@ -6,9 +6,9 @@
                 <?= $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellidos'] ?>
             </h3>
             <!-- BOTONES -->
-            <a href="cerrar.php" class="boton b-crear">Crear Entradas</a>
-            <a href="cerrar.php" class="boton b-crearCa">Crear Categorias</a>
-            <a href="cerrar.php" class="boton b-datos">Mis Datos</a>
+            <a href="crear-entradas.php" class="boton b-crear">Crear Entradas</a>
+            <a href="crear-categoria.php" class="boton b-crearCa">Crear Categorias</a>
+            <a href="mis-datos.php" class="boton b-datos">Mis Datos</a>
             <a href="cerrar.php" class="boton b-cerrar">Cerrar Sesión</a>
         </div>
     <?php endif; ?>
@@ -32,6 +32,7 @@
         <div id="register" class="bloque">
 
             <h3>Registrate</h3>
+            <!-- Mostrar errores -->
             <?php
             if (isset($_SESSION['completado'])) :
             ?>
@@ -69,10 +70,10 @@
                 echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'password') : "";
                 ?>
                 <input type="submit" name="submit" value="Registrarse">
-                <?php
-                borrarErrores();
-                ?>
             </form>
+            <?php
+            borrarErrores();
+            ?>
         </div>
     <?php endif; ?>
 

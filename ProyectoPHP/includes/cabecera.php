@@ -32,7 +32,7 @@ require_once 'includes/helpers.php';
                 $categorias = getCategorias($db);
                 if (!empty($categorias)) :
                     while ($categoria = mysqli_fetch_assoc($categorias)) :   ?>
-                        <li><a href="categoria.php?id=<?= $categoria['id'] ?> "><?= $categoria['nombre'] ?></a></li>
+                        <li><a href="categoria.php?id=<?= $categoria['id'] ?> "><?= ucfirst(mb_strtolower($categoria['nombre'])) ?></a></li>
                 <?php
                     endwhile;
                 endif;
@@ -43,3 +43,7 @@ require_once 'includes/helpers.php';
         </nav>
         <!-- <div class="clearfix"></div> -->
     </header>
+    <div id="contenedor">
+        <?php
+        require_once 'includes/barra_lateral.php';
+        ?>

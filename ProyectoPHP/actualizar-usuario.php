@@ -5,14 +5,11 @@ if (isset($_POST)) {
     if (!isset($_SESSION)) {
         session_start();
     }
-
+    // Capturar valores
     $nombre = isset($_POST['nombreR']) ? mysqli_real_escape_string($db, test_input($_POST['nombreR'])) : '';
     $apellidos = isset($_POST['apellidosR']) ? mysqli_real_escape_string($db, test_input($_POST['apellidosR'])) : '';
     $email = isset($_POST['emailR']) ? mysqli_real_escape_string($db, test_input($_POST['emailR'])) : '';
-    $password = isset($_POST['passwordR']) ? mysqli_real_escape_string($db, test_input($_POST['passwordR'])) : '';
-
     //array de errores
-
     $errores = array();
 
     // Validación de campos
@@ -35,33 +32,37 @@ if (isset($_POST)) {
         $email_validado = false;
         $errores['email'] = "Email no válido";
     }
-    if (!empty($password)) {
-        $password_validado = true;
-    } else {
-        $password_validado = false;
-        $errores['password'] = "Password vacio";
-    }
 
 
-    $guardarUsuario = false;
     if (count($errores) == 0) {
-        $guardarUsuario = true;
-        //Cifrar la contraseña
-        $pw_secure = password_hash($password, PASSWORD_BCRYPT, ['cost' => 4]);
+        $usuario = $_SESSION['usuario'];
+        //Comprobar si el email existe
+        $sql = "SELECT id, EMAIL FROM USUARIOS WHERE EMAIL='$email'";
+        $exist_email = mysqli_query($db, $sql);
+        $exist_usuario = mysqli_fetch_assoc($exist_email);
 
-        // var_dump($password);
-        // var_dump($pw_secure);
-        // función que verifica si el password es correcto
-        // var_dump(password_verify("asdad", $pw_secure));
-
-        //insertra usuario en la BD
-        $sql = "INSERT INTO usuarios VALUES(NULL,'$nombre','$apellidos','$email','$pw_secure',CURDATE());";
-        $query = mysqli_query($db, $sql);
-        // var_dump(mysqli_error($db));
-        // die();
-        $query ? $_SESSION['completado'] = "El registro se a completado con exito" : $_SESSION['errores']['general'] = "Fallo al guardar el Usuario";
+        if ($exist_usuario['id'] == $usuario['id'] || empty($exist_usuario)) {
+            //Actualizar usuario en la BD
+            $sql = "UPDATE usuarios SET NOMBRE = '$nombre',
+        APELLIDOS = '$apellidos',
+        EMAIL = '$email'
+        WHERE id = " . $usuario['id'];
+            $query = mysqli_query($db, $sql);
+            if ($query) {
+                $_SESSION['usuario']['nombre'] = $nombre;
+                $_SESSION['usuario']['apellidos'] = $apellidos;
+                $_SESSION['usuario']['email'] = $email;
+                $_SESSION['completado'] = "Tus datos se han actualizado con exito";
+            } else {
+                var_dump(mysqli_error($db));
+                $_SESSION['errores']['general'] = "Fallo al actualizar el Usuario";
+            }
+        } else {
+            $_SESSION['errores']['general'] = "El correo ya existe";
+        }
     } else {
         $_SESSION['errores'] = $errores;
     }
 }
-header('Location:index.php');
+
+header('Location:mis-datos.php');

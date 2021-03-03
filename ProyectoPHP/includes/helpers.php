@@ -14,6 +14,14 @@ function borrarErrores()
         $_SESSION['errores'] = null;
         unset($_SESSION['errores']);
     }
+    if (isset($_SESSION['errores_entrada'])) {
+        $_SESSION['errores_entrada'] = null;
+        unset($_SESSION['errores_entrada']);
+    }
+    if (isset($_SESSION['errores_categoria'])) {
+        $_SESSION['errores_categoria'] = null;
+        unset($_SESSION['errores_categoria']);
+    }
     if (isset($_SESSION['completado'])) {
         $_SESSION['completado'] = null;
         unset($_SESSION['completado']);
@@ -27,7 +35,7 @@ function getCategorias($conexion)
     if ($categorias && mysqli_num_rows($categorias) >= 1) {
         $resultado = $categorias;
     }
-    return $resultado;
+    return  $resultado;
 }
 
 function getEntradas($conexion)
@@ -41,4 +49,12 @@ function getEntradas($conexion)
         $resultado = $entradas;
     }
     return $resultado;
+}
+//Sanitizar entrada
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }

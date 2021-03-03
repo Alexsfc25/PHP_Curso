@@ -1,4 +1,5 @@
 <?php
+require_once 'includes/redirect.php';
 //Iniciar la sesión y la conexión al la bd
 require_once 'includes/conexion.php';
 //Recoger datos del formulario
