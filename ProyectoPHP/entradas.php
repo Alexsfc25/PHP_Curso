@@ -3,10 +3,10 @@ require_once 'includes/cabecera.php';
 ?>
 <div id="principal">
     <h2>
-        Últimas Entradas
+        Todas las Entradas
     </h2>
     <?php
-    $entradas = getEntradas($db, true);
+    $entradas = getEntradas($db);
     if (!empty($entradas)) :
         while ($entrada = mysqli_fetch_assoc($entradas)) :   ?>
             <article class="entrada">
@@ -25,9 +25,6 @@ require_once 'includes/cabecera.php';
     endif;
     ?>
 
-    <div id="ver-todas">
-        <a href="entradas.php">Ver todas las entradas</a>
-    </div>
 </div>
 
 </div>

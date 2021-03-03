@@ -1,4 +1,5 @@
 <?php
+
 function mostrarError($errores, $campo)
 {
     $alerta = "";
@@ -8,6 +9,7 @@ function mostrarError($errores, $campo)
     }
     return $alerta;
 }
+
 function borrarErrores()
 {
     if (isset($_SESSION['errores'])) {
@@ -27,6 +29,7 @@ function borrarErrores()
         unset($_SESSION['completado']);
     }
 }
+
 function getCategorias($conexion)
 {
     $sql = "SELECT * FROM CATEGORIAS ORDER BY ID ASC ";
@@ -38,11 +41,27 @@ function getCategorias($conexion)
     return  $resultado;
 }
 
-function getEntradas($conexion)
+function getCategoriaById($conexion, $id)
+{
+    $sql = "SELECT * FROM CATEGORIAS WHERE ID = $id ORDER BY ID ASC;";
+    $categorias =   mysqli_query($conexion, $sql);
+    $resultado = array();
+    if ($categorias && mysqli_num_rows($categorias) >= 1) {
+        $resultado = mysqli_fetch_assoc($categorias);
+    }
+    return  $resultado;
+}
+
+function getEntradas($conexion, $limit = null, $categoria = null)
 {
     $sql = "SELECT E.*, C.nombre AS 'categoria' FROM ENTRADAS E
-        INNER JOIN CATEGORIAS C ON E.CATEGORIA_ID=C.ID
-        ORDER BY E.ID DESC LIMIT 4";
+        INNER JOIN CATEGORIAS C ON E.CATEGORIA_ID=C.ID ";
+    if (!empty($categoria)) $sql .= " WHERE E.CATEGORIA_ID=$categoria ";
+    $sql .= "ORDER BY E.ID DESC ";
+    if ($limit) {
+        $sql .= "LIMIT 4";
+    }
+
     $entradas =   mysqli_query($conexion, $sql);
     $resultado = array();
     if ($entradas && mysqli_num_rows($entradas) >= 1) {
@@ -50,6 +69,7 @@ function getEntradas($conexion)
     }
     return $resultado;
 }
+
 //Sanitizar entrada
 function test_input($data)
 {

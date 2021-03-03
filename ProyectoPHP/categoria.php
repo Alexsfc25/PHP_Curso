@@ -1,12 +1,23 @@
 <?php
+require_once 'includes/conexion.php';
+require_once 'includes/helpers.php';
+?>
+
+<?php
+$categoria_id = getCategoriaById($db, $_GET['id']);
+if (!isset($categoria_id['id'])) {
+    header("Location:index.php");
+}
+?>
+<?php
 require_once 'includes/cabecera.php';
 ?>
 <div id="principal">
     <h2>
-        Últimas Entradas
+        Entradas de <?= $categoria_id['nombre'] ?>
     </h2>
     <?php
-    $entradas = getEntradas($db, true);
+    $entradas = getEntradas($db, null, $_GET['id']);
     if (!empty($entradas)) :
         while ($entrada = mysqli_fetch_assoc($entradas)) :   ?>
             <article class="entrada">
@@ -25,9 +36,6 @@ require_once 'includes/cabecera.php';
     endif;
     ?>
 
-    <div id="ver-todas">
-        <a href="entradas.php">Ver todas las entradas</a>
-    </div>
 </div>
 
 </div>
