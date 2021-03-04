@@ -1,7 +1,7 @@
 <?php
-require_once 'includes/redirect.php';
+require_once '../includes/redirect.php';
 //Iniciar la sesión y la conexión al la bd
-require_once 'includes/conexion.php';
+require_once '../includes/conexion.php';
 //Recoger datos del formulario
 if ($_POST && !isset($_SESSION['usuario'])) {
     $email = trim($_POST['email']);
@@ -26,4 +26,4 @@ if ($_POST && !isset($_SESSION['usuario'])) {
         $_SESSION['error_login'] = "Login Incorrecto!";
     }
 }
-header("Location:index.php");
+header("Location:../index.php");

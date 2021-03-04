@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST)) {
-    require_once 'includes/conexion.php';
-    require_once 'includes/helpers.php';
+    require_once '../includes/conexion.php';
+    require_once '../includes/helpers.php';
     if (!isset($_SESSION)) {
         session_start();
     }
@@ -65,4 +65,4 @@ if (isset($_POST)) {
     }
 }
 
-header('Location:mis-datos.php');
+header('Location:../mis-datos.php');

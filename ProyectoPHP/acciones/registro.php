@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST)) {
-    require_once 'includes/conexion.php';
-    require_once 'includes/helpers.php';
+    require_once '../includes/conexion.php';
+    require_once '../includes/helpers.php';
     if (!isset($_SESSION)) {
         session_start();
     }
@@ -64,4 +64,4 @@ if (isset($_POST)) {
         $_SESSION['errores'] = $errores;
     }
 }
-header('Location:index.php');
+header('Location:../index.php');

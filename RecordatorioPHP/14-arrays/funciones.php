@@ -16,6 +16,7 @@ asort($numeros);
 var_dump($numeros);
 
 // Añadir elementos a el array
+echo 'Agregar ';
 array_push($cantantes, 'Nanpa Básico');
 $cantantes[] = 'Tren Lokote';
 

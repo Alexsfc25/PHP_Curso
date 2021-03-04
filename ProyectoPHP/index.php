@@ -2,19 +2,19 @@
 require_once 'includes/cabecera.php';
 ?>
 <div id="principal">
-    <h2>
+    <h1>
         Últimas Entradas
-    </h2>
+    </h1>
     <?php
     $entradas = getEntradas($db, true);
     if (!empty($entradas)) :
         while ($entrada = mysqli_fetch_assoc($entradas)) :   ?>
             <article class="entrada">
-                <h3>
-                    <a href="#">
+                <h2>
+                    <a href="entrada.php?id=<?= $entrada['id'] ?>">
                         <?= $entrada['titulo'] ?>
                     </a>
-                </h3>
+                </h2>
                 <span class="date"><?= $entrada['categoria'] . " | " . $entrada['fecha'] ?></span>
                 <p>
                     <?= substr($entrada['descripcion'], 0, 190) . "..." ?>

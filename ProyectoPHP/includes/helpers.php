@@ -51,16 +51,34 @@ function getCategoriaById($conexion, $id)
     }
     return  $resultado;
 }
+function getEntradaById($conexion, $id)
+{
+    $sql = "SELECT E.* , C.NOMBRE AS 'CATEGORIA', CONCAT(U.NOMBRE,' ',U.APELLIDOS ) AS 'USUARIO' FROM ENTRADAS E
+    INNER JOIN CATEGORIAS C ON E.CATEGORIA_ID=C.ID
+    INNER JOIN USUARIOS U ON E.USUARIO_ID=U.ID
+    WHERE E.ID = $id ORDER BY E.ID ASC;";
+    $entrada =   mysqli_query($conexion, $sql);
+    $resultado = array();
+    if ($entrada && mysqli_num_rows($entrada) >= 1) {
+        $resultado = mysqli_fetch_assoc($entrada);
+    }
+    return  $resultado;
+}
 
-function getEntradas($conexion, $limit = null, $categoria = null)
+function getEntradas($conexion, $limit = null, $categoria = null, $busqueda = null)
 {
     $sql = "SELECT E.*, C.nombre AS 'categoria' FROM ENTRADAS E
         INNER JOIN CATEGORIAS C ON E.CATEGORIA_ID=C.ID ";
+
     if (!empty($categoria)) $sql .= " WHERE E.CATEGORIA_ID=$categoria ";
-    $sql .= "ORDER BY E.ID DESC ";
-    if ($limit) {
-        $sql .= "LIMIT 4";
+    if (!empty($busqueda)) {
+        $busqueda = filter_var($busqueda, FILTER_SANITIZE_STRING);
+        $sql .= " WHERE E.TITULO LIKE '%$busqueda%' ";
     }
+    $sql .= "ORDER BY E.ID DESC ";
+
+    if ($limit)   $sql .= "LIMIT 4";
+
 
     $entradas =   mysqli_query($conexion, $sql);
     $resultado = array();

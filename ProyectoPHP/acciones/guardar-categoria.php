@@ -1,8 +1,8 @@
 <?php
 if (isset($_POST)) {
     # Conexión al a la bd
-    require_once 'includes/conexion.php';
-    require_once 'includes/helpers.php';
+    require_once '../includes/conexion.php';
+    require_once '../includes/helpers.php';
     $nombre = (isset($_POST['nombre'])) ? mysqli_real_escape_string($db, test_input($_POST['nombre'])) : false;
 
     //array de errores
@@ -18,9 +18,9 @@ if (isset($_POST)) {
     if (count($errores) == 0) {
         $sql = "INSERT INTO CATEGORIAS VALUES(NULL,'$nombre');";
         $gcategoria = mysqli_query($db, $sql);
-        header("Location:index.php");
+        header("Location:../index.php");
     } else {
         $_SESSION['errores_categoria'] = $errores;
-        header("Location:crear-categoria.php");
+        header("Location:../crear-categoria.php");
     }
 }

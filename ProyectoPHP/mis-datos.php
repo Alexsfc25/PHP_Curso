@@ -3,9 +3,9 @@ require_once 'includes/redirect.php';
 require_once 'includes/cabecera.php';
 ?>
 <div id="principal">
-    <h2>
+    <h1>
         Mis Datos
-    </h2>
+    </h1>
     <?php
     if (isset($_SESSION['completado'])) :
     ?>
@@ -21,7 +21,7 @@ require_once 'includes/cabecera.php';
     <?php
     endif;
     ?>
-    <form action="actualizar-usuario.php" method="post">
+    <form action="acciones/actualizar-usuario.php" method="post">
         <label for="nombreR">Nombre</label>
         <input type="text" name="nombreR" id="nombreR" value="<?= $_SESSION['usuario']['nombre'] ?>">
         <?php

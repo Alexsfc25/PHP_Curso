@@ -1,27 +1,34 @@
 <aside id="sidebar">
+    <div id="buscador" class="bloque">
+        <h2>Buscar</h2>
+        <form action="buscar.php" method="post">
+            <input type="text" name="busqueda" id="busqueda">
+            <input type="submit" value="Buscar">
+        </form>
+    </div>
 
     <?php if (isset($_SESSION['usuario'])) : ?>
         <div id="usuario-logeado" class="bloque">
-            <h3>
+            <h2>
                 <?= $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellidos'] ?>
-            </h3>
+            </h2>
             <!-- BOTONES -->
             <a href="crear-entradas.php" class="boton b-crear">Crear Entradas</a>
             <a href="crear-categoria.php" class="boton b-crearCa">Crear Categorias</a>
             <a href="mis-datos.php" class="boton b-datos">Mis Datos</a>
-            <a href="cerrar.php" class="boton b-cerrar">Cerrar Sesión</a>
+            <a href="acciones/cerrar.php" class="boton b-eliminar">Cerrar Sesión</a>
         </div>
     <?php endif; ?>
 
     <?php if (!isset($_SESSION['usuario'])) : ?>
         <div id="login" class="bloque">
-            <h3>Identificate</h3>
+            <h2>Identificate</h2>
             <?php if (isset($_SESSION['error_login'])) : ?>
                 <div class="alerta alerta-error">
                     <?= $_SESSION['error_login'] ?>
                 </div>
             <?php endif; ?>
-            <form action="login.php" method="post">
+            <form action="acciones/login.php" method="post">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email">
                 <label for="password">Password</label>
@@ -48,7 +55,7 @@
             <?php
             endif;
             ?>
-            <form action="registro.php" method="post">
+            <form action="acciones/registro.php" method="post">
                 <label for="nombreR">Nombre</label>
                 <input type="text" name="nombreR" id="nombreR">
                 <?php
