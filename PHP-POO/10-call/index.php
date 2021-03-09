@@ -14,8 +14,8 @@ class Persona {
 
     // Es llamado cuando no existe el método al que se esta haciendo referencia
     public function __call($name, $arguments) {
-//        echo $name;
-//        echo$arguments;
+//         $name; Nombre del método que esta siendo llamado
+//         $arguments; Argumentos que el método tiene 
 
         $prefix_metodo = substr($name, 0, 3);
 

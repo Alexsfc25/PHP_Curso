@@ -1,5 +1,5 @@
 <?php
-
+//Clase en común que se puede utilizar
 trait Utilidades {
 
     public function mostrarNombre() {
