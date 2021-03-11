@@ -1,10 +1,9 @@
 <?php
-require_once './controllers/usuarioController.php';
-require_once './controllers/notaController.php';
+require_once 'autoload.php';
 if (isset($_GET['controller'])) {
     $nombre_controlador = $_GET['controller'] . "Controller";
 } else {
-    echo 'No existe el recursosdadad';
+    echo 'No existe el recurso';
     exit();
 }
 
@@ -21,4 +20,4 @@ if (isset($nombre_controlador) && class_exists($nombre_controlador)) {
     echo 'No existe el recurso';
 }
 ?>
-<h1>Hola Mundo</h1> 
+<!--<h1>Hola Mundo</h1>--> 

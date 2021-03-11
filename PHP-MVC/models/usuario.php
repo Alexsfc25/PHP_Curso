@@ -1,6 +1,6 @@
 <?php
 
-require_once './modeloBase.php';
+require_once 'modeloBase.php';
 
 class Usuario extends ModeloBase {
 
@@ -9,8 +9,8 @@ class Usuario extends ModeloBase {
     public $email;
     public $password;
 
-    function __construct() {
-        
+    public function __construct() {
+        parent::__construct();
     }
 
     function getNombre() {
